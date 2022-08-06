@@ -23,21 +23,21 @@
   font-weight: bold;
 }
 .middle_graph_div {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 30%;
   height: 400px;
   position: absolute;
   top: 30%;
   left: 40%;
 }
-.middle_graph_div > span {
+.first_span_tag {
   position: relative;
-  font-weight: bold;
   left: 35%;
   top: 6%;
+  font-weight: bold;
   font-size: 30px;
 }
-.middle_graph_div > p {
+.first_p_tag {
   font-weight: bold;
   font-size: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -45,11 +45,16 @@
   top: 5%;
   left: 20%;
 }
+.second_p_tag {
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 15px;
+}
 .first_samll_graph {
   /* border: 2px solid red; */
   position: relative;
   width: 70%;
-  height: 100px;
   top: 2%;
   left: 20%;
 }
@@ -59,7 +64,7 @@
 .firts_div {
   width: 40px;
   height: 12px;
-  background-color: #96ccf1;
+  background-color: #97e2e7;
   margin: 8px 5px 0px 13.5px;
   cursor: pointer;
 }
@@ -69,7 +74,7 @@
 .second_div {
   width: 100px;
   height: 12px;
-  background-color: #96ccf1;
+  background-color: #97e2e7;
   cursor: pointer;
   margin: 8px 5px 0px 19px;
 }
@@ -79,7 +84,7 @@
 .third_div {
   width: 150px;
   height: 12px;
-  background-color: #96ccf1;
+  background-color: #97e2e7;
   margin: 8px 5px 0px 17px;
   cursor: pointer;
 }
@@ -90,4 +95,12 @@
   font-weight: bold;
   font-size: small;
   margin-top: 3px;
+}
+.second_span_tag {
+  position: relative;
+  left: 20%;
+  top: 0%;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
