@@ -2,7 +2,16 @@ import "../App.css";
 import { Line, Bar } from "react-chartjs-2";
 // eslint-disable-next-line
 import Chart from "chart.js/auto";
+import { useEffect, useState } from "react";
 export const Dashbord = () => {
+  const [arrone, setArrone] = useState([2000, 4000, 6000, 8000, 10000]);
+  useEffect(() => {}, []);
+  const dummyarr = () => {
+    let firstarry = [1, 2, 3, 4, 5];
+
+    let copy = firstarry.map((el) => Math.floor(Math.random() * 10000) + 1000);
+    setArrone(copy);
+  };
   const options = {
     responsive: true,
     plugins: {
@@ -97,7 +106,7 @@ export const Dashbord = () => {
     datasets: [
       {
         fill: true,
-        data: [2000, 4000, 6000, 8000, 10000],
+        data: arrone,
         borderColor: "#97e2e7",
         backgroundColor: "#e3f2f3",
       },
@@ -114,7 +123,7 @@ export const Dashbord = () => {
       },
     ],
   };
-  const state = {
+  const datathree = {
     labels: [
       "Get Along with Dogs",
       "Get Along with Cat",
@@ -130,11 +139,97 @@ export const Dashbord = () => {
       },
     ],
   };
+  const optionsthree = {
+    indexAxis: "y",
+    scales: {
+      xAxes: {
+        grid: {
+          display: false,
+          drawBorder: false,
+        },
+        ticks: {
+          display: false,
+        },
+      },
+      yAxes: {
+        grid: {
+          display: false,
+          drawBorder: false,
+        },
+      },
+    },
+    plugins: {
+      title: {
+        display: false,
+        font: { size: 50, family: "rubik" },
+      },
+      legend: { display: false, position: "right" },
+      labels: {
+        render: "percentage",
+        precision: 2,
+      },
+    },
+    // maintainAspectRatio: false,
+  };
+  const datafour = {
+    labels: [
+      "Labrador",
+      "Pit",
+      "Hound",
+      "Shepered",
+      "Terrier",
+      "American",
+      "Catahoula",
+      "Hounds",
+      "Australian",
+      "Mountain",
+    ],
+    datasets: [
+      {
+        axis: "y",
+        backgroundColor: "#97e2e7",
+        hoverBackgroundColor: "#e3f2f3",
+        data: [8, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+      },
+    ],
+  };
+  const optionsfour = {
+    indexAxis: "y",
+    scales: {
+      xAxes: {
+        grid: {
+          display: false,
+          drawBorder: false,
+        },
+        ticks: {
+          display: false,
+        },
+      },
+      yAxes: {
+        grid: {
+          display: false,
+          drawBorder: false,
+        },
+      },
+    },
+    plugins: {
+      title: {
+        display: false,
+        font: { size: 50, family: "rubik" },
+      },
+      legend: { display: false, position: "right" },
+      labels: {
+        render: "percentage",
+        precision: 2,
+      },
+    },
+    // maintainAspectRatio: false,
+  };
   return (
     <>
       <div className="bacground_img_div">
         <div className="first_left_chart">
-          <span>10,857</span>
+          <span>{Math.floor(Math.random() * 10000) + 1000}</span>
           <Line
             style={{
               //   border: "2px solid red",
@@ -154,7 +249,7 @@ export const Dashbord = () => {
             {/*first 30days */}
             <div>
               <span className="span_style_class">0-1 Puppy</span>
-              <div className="firts_div"></div>{" "}
+              <div onClick={() => dummyarr()} className="firts_div"></div>{" "}
               <span className="span_style_class">30days</span>
             </div>
             {/*second 80days */}
@@ -192,50 +287,26 @@ export const Dashbord = () => {
           </span>
           <div className="proportio_chart_div">
             <Bar
-              style={{ height: "100%" }}
-              data={state}
-              options={{
-                indexAxis: "y",
-                scales: {
-                  xAxes: {
-                    grid: {
-                      display: false,
-                      drawBorder: false,
-                    },
-                    ticks: {
-                      display: false,
-                    },
-                  },
-                  yAxes: {
-                    grid: {
-                      display: false,
-                      drawBorder: false,
-                    },
-                  },
-                },
-                plugins: {
-                  title: {
-                    display: false,
-                    // font: { size: 50, family: "rubik" },
-                  },
-                  legend: { display: false, position: "right" },
-                  labels: {
-                    render: "percentage",
-                    precision: 2,
-                  },
-                },
-                // maintainAspectRatio: false,
-              }}
+              className="bar"
+              // style={{ height: "50px", border: "2px solid red" }}
+              data={datathree}
+              options={optionsthree}
             />
-            <div
-              style={{
-                width: "15px",
-                height: "15px",
-                backgroundColor: "#97e2e7",
-                display: "inline-block",
-              }}
-            ></div>
-            <span>Dose/Are</span>
+          </div>
+          <div className="dose_first_div"></div>
+          <span className="dose_span_tag">Dose/Are</span>
+          <div className="dose_Second_div"></div>
+          <span className="dose_span_tag">Dose Not/Are Not</span>
+          <div className="dose_third_div"></div>
+          <span className="dose_span_tag">Not Sure</span>
+          {/* last each dog breed */}
+          <p className="text_p_tag">Top 10 Primary Breeds(Including Mixes)</p>
+          <div className="last_breeds_div">
+            <Bar
+              // style={{ height: "200px" }}
+              data={datafour}
+              options={optionsfour}
+            />
           </div>
         </div>
       </div>

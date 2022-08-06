@@ -105,8 +105,8 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .last_graph_div {
-  border: 2px solid red;
-  height: 410px;
+  /* border: 2px solid red; */
+  /* height: 410px; */
   width: 25%;
   position: absolute;
   left: 70%;
@@ -121,8 +121,42 @@
   margin-left: 20px;
 }
 .proportio_chart_div {
-  border: 2px solid yellow;
-  height: 120px;
+  /* border: 2px solid yellow; */
   width: 80%;
   margin-left: 20px;
+}
+
+.dose_first_div {
+  width: 15px;
+  height: 15px;
+  background-color: #97e2e7;
+  display: inline-block;
+  margin-left: 23px;
+}
+.dose_Second_div {
+  width: 15px;
+  height: 15px;
+  background-color: #5c6068;
+  display: inline-block;
+  margin-left: 30px;
+}
+.dose_third_div {
+  width: 15px;
+  height: 15px;
+  background-color: #d3d3d3;
+  display: inline-block;
+  margin-left: 10px;
+}
+.dose_span_tag {
+  font-size: 1.7ch;
+  margin-left: 5px;
+}
+.text_p_tag {
+  font-weight: bold;
+  margin-left: 20px;
+}
+.last_breeds_div {
+  /* border: 2px solid blue; */
+  margin-left: 15px;
+  /* width: 90%; */
 }
