@@ -104,3 +104,25 @@
   font-size: 20px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+.last_graph_div {
+  border: 2px solid red;
+  height: 410px;
+  width: 25%;
+  position: absolute;
+  left: 70%;
+  top: 30%;
+}
+.last_graph_div_first_span {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+.proportio_chart_div {
+  border: 2px solid yellow;
+  height: 120px;
+  width: 80%;
+  margin-left: 20px;
+}

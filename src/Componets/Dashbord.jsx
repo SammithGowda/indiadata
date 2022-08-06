@@ -1,5 +1,5 @@
 import "../App.css";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 // eslint-disable-next-line
 import Chart from "chart.js/auto";
 export const Dashbord = () => {
@@ -63,6 +63,7 @@ export const Dashbord = () => {
       x: {
         grid: {
           display: false,
+          borderColor: "#d7d7d7",
         },
       },
       y: {
@@ -89,7 +90,7 @@ export const Dashbord = () => {
         },
       },
     },
-    tooltip: { visible: true },
+    tooltip: { visible: false },
   };
   const data = {
     labels: ["2014", "2016", "2018", "2020", "2022"],
@@ -113,7 +114,22 @@ export const Dashbord = () => {
       },
     ],
   };
-
+  const state = {
+    labels: [
+      "Get Along with Dogs",
+      "Get Along with Cat",
+      "Get Along with Kids",
+      "Are Housebroken",
+    ],
+    datasets: [
+      {
+        axis: "y",
+        backgroundColor: "#97e2e7",
+        hoverBackgroundColor: "#e3f2f3",
+        data: [90, 80, 30, 41],
+      },
+    ],
+  };
   return (
     <>
       <div className="bacground_img_div">
@@ -132,7 +148,7 @@ export const Dashbord = () => {
         </div>
         {/*middle div with graph*/}
         <div className="middle_graph_div">
-          <span className="first_span_tag">45 Days</span>
+          <span className="first_span_tag">45 days</span>
           <p className="first_p_tag">Avg Time to Adopt by Age Bucket</p>
           <div className="first_samll_graph">
             {/*first 30days */}
@@ -159,7 +175,7 @@ export const Dashbord = () => {
           <div>
             <Line
               style={{
-                //   border: "2px solid red",
+                // border: "2px solid red",
                 width: "90%",
                 height: "91%",
                 margin: "auto",
@@ -170,6 +186,58 @@ export const Dashbord = () => {
           </div>
         </div>
         {/*last div graph */}
+        <div className="last_graph_div">
+          <span className="last_graph_div_first_span">
+            Propostion of Dogs that...
+          </span>
+          <div className="proportio_chart_div">
+            <Bar
+              style={{ height: "100%" }}
+              data={state}
+              options={{
+                indexAxis: "y",
+                scales: {
+                  xAxes: {
+                    grid: {
+                      display: false,
+                      drawBorder: false,
+                    },
+                    ticks: {
+                      display: false,
+                    },
+                  },
+                  yAxes: {
+                    grid: {
+                      display: false,
+                      drawBorder: false,
+                    },
+                  },
+                },
+                plugins: {
+                  title: {
+                    display: false,
+                    // font: { size: 50, family: "rubik" },
+                  },
+                  legend: { display: false, position: "right" },
+                  labels: {
+                    render: "percentage",
+                    precision: 2,
+                  },
+                },
+                // maintainAspectRatio: false,
+              }}
+            />
+            <div
+              style={{
+                width: "15px",
+                height: "15px",
+                backgroundColor: "#97e2e7",
+                display: "inline-block",
+              }}
+            ></div>
+            <span>Dose/Are</span>
+          </div>
+        </div>
       </div>
     </>
   );
