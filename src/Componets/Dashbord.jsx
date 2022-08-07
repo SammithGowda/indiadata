@@ -5,12 +5,17 @@ import Chart from "chart.js/auto";
 import { useEffect, useState } from "react";
 export const Dashbord = () => {
   const [arrone, setArrone] = useState([2000, 4000, 6000, 8000, 10000]);
+  const [arrtwo,setArrtwo]=useState([33, 48, 56, 40, 45, 60])
+  const [arrthird,setThird]=useState([90, 80, 30, 41])
   useEffect(() => {}, []);
   const dummyarr = () => {
     let firstarry = [1, 2, 3, 4, 5];
-
-    let copy = firstarry.map((el) => Math.floor(Math.random() * 10000) + 1000);
-    setArrone(copy);
+    let firstcopy = firstarry.map((el) => Math.floor(Math.random() * 10000) + 1000);
+    setArrone(firstcopy);
+    let secondcopy = firstarry.map((el) => Math.floor(Math.random() * 59) + 10);
+    setArrtwo(secondcopy);
+    let thirdcopy = firstarry.map((el) => Math.floor(Math.random() * 89) + 21);
+    setThird(thirdcopy);
   };
   const options = {
     responsive: true,
@@ -117,7 +122,7 @@ export const Dashbord = () => {
     datasets: [
       {
         fill: true,
-        data: [33, 48, 56, 40, 45, 60],
+        data: arrtwo,
         borderColor: "#97e2e7",
         backgroundColor: "#e3f2f3",
       },
@@ -135,7 +140,7 @@ export const Dashbord = () => {
         axis: "y",
         backgroundColor: "#97e2e7",
         hoverBackgroundColor: "#e3f2f3",
-        data: [90, 80, 30, 41],
+        data:arrthird,
       },
     ],
   };
@@ -255,13 +260,13 @@ export const Dashbord = () => {
             {/*second 80days */}
             <div>
               <span className="span_style_class">2-6 Adult</span>
-              <div className="second_div"></div>{" "}
+              <div onClick={() => dummyarr()} className="second_div"></div>{" "}
               <span className="span_style_class">80 days</span>
             </div>
             {/*third 103days */}
             <div>
               <span className="span_style_class">7+ Senior</span>
-              <div className="third_div"></div>{" "}
+              <div onClick={() => dummyarr()} className="third_div"></div>{" "}
               <span className="span_style_class">103 days</span>
             </div>
           </div>
